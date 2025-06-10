@@ -1,14 +1,13 @@
-# My portfolio
-
-## Code Review
+# Code Review
 {% include youtubePlayer.html %}
 
-## Enhancement One
+# Enhancement One
 ### Briefly describe the artifact. What is it? When was it created?
 The artifact chosen for enhancement one is the binary search tree (BST) assignment from CS-300 Data Structures and Algorithms. This is a quick program that will load a CSV file into memory as a BST and perform basic insertion, search, deletion, and traversal operations on it. It was originally meant as an assignment to gain experience working with BST. I chose to use this one for enhancement one specifically for a few different reasons:
 1.	I wanted to convert something from one language to another for this artifact. Upon thinking about this, I decided to convert something into Python because it has been a while since I used Python to any significant degree and this enhancement provided me with the opportunity to brush up on my Python skills. Additionally, if I do go into something involving big data, I will need to be proficient in Python.
 2.	In addition to brushing up on Python, I also wanted to take the opportunity in this class to gain more experience with data structures and algorithms (DSA) since it has been a while since I specifically reviewed/studied those. While enhancement two does cover this, using something related to DSA during another enhancement would give me additional experience.
 3.	Upon reviewing artifacts that fit the above goals, I realized that there were many areas that I could improve this one specifically. This gives me the chance to showcase what I have learned through this degree since I originally created the original code.
+
 ### Justify the inclusion of the artifact in your ePortfolio. Why did you select this item? What specific components of the artifact showcase your skills and abilities in software development? How was the artifact improved?
 As stated above, this artifact fits the requirements I was looking for in this enhancement (i.e., conversion to Python, DSA, and opportunities to improve). Further, in planning the additional enhancements, I realized that I could use this for all three which gives me the opportunity to show how I can take code and improve it over time to produce a polished deliverable for a client.
 
