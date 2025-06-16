@@ -127,6 +127,93 @@ Using this artifact seemed like the obvious choice since it is originally built 
 
 The main improvements for this artifact are the inclusion of an RBT as the data structure used while also building it in a way that the BST that was built for enhancement one didn’t break. This was done through separate classes (BST vs RBT) while also modifying the Node class to work with either data structure. In addition to this, I further improved the unit testing to test the new RBT.
 
+In addition to the implementation of an RBT, I also retained the improved security and stability that was created during the first enhancement. This is accomplished through data validation and exception handling. Examples of data validation include the following:
+- Ensuring that Bid data meets the requirements of the Bid class, specifically that the Bid ID and Bid Amount are and int and float respectively:
+```python
+    rbt.insert(Bid(int(row[bidIdColumn]),
+                   row[titleColumn],
+                   row[fundColumn],
+                   float((row[bidAmountColumn][1:]).replace(',','')))) #strip initial $ sign and convert to float
+```
+- Ensuring that input for menus adhere to the set of possible choices. Deviations from this display an error and ask the user to try again:
+```python
+    def displayMainMenu() -> int:
+    """
+    Displays the main menu and returns the user's choice
+    
+    Returns
+    -------
+    int
+        The user's choice
+    """
+    choice : str = "0"
+    while choice == "0":
+        print("Menu:")
+        print("  1. Load Bids")
+        print("  2. Display All Bids")
+        print("  3. Find Bid")
+        print("  4. Remove Bid")
+        print("  9. Exit")
+        choice = input("Enter choice: ")
+        
+        if choice in ["1", "2", "3", "4", "9"]:
+            return int(choice)
+        else:
+            print("Invalid choice. Please try again")
+            choice = "0"
+```
+The main example of exception handling is seen in the loadBids function. This function has the possibility of throwing an exception due to a variety of reasons (e.g., missing file, missing headers in file, data formatted incorrectly, etc.). This function will catch those errors, display an appropriate error message to the user, then return to the main function:
+```python
+    def loadBids(csvPath: str) -> RedBlackTree:
+    """
+    Loads bid data from a csv to the red black tree in memory
+    
+    Parameters
+    ----------
+    csvPath : str
+        Relative path of CSV file to load
+        
+    Returns
+    -------
+    RedBlackTree
+        A red black tree loaded with the data from the csv file
+    """
+    print('Loading CSV file:', csvPath)
+    rbt = qbr_dataStructures.RedBlackTree()
+    try:
+        with open(csvPath) as csvFile:
+            # detects csv dialect and presence of header
+            dialect = csv.Sniffer().sniff(csvFile.read(1024))
+            csvFile.seek(0)
+            headerPresent = csv.Sniffer().has_header(csvFile.read(1024))
+            csvFile.seek(0)
+            csvReader = csv.reader(csvFile, dialect)
+            # check for presence of header
+            if not headerPresent:
+                raise FileFormatError("No header found in CSV file")
+            else:
+                rowNumber = 1
+                for row in csvReader:
+                    if rowNumber == 1:
+                        bidIdColumn = row.index('Auction ID')
+                        titleColumn = row.index('Auction Title')
+                        fundColumn = row.index('Fund')
+                        bidAmountColumn = row.index('Winning Bid')
+                        rowNumber = rowNumber + 1
+                    else:
+                        rbt.insert(Bid(int(row[bidIdColumn]),
+                                       row[titleColumn],
+                                       row[fundColumn],
+                                       float((row[bidAmountColumn][1:]).replace(',','')))) #strip initial $ sign and convert to float
+    except Exception as error:
+        print("Error loading file")
+        print(f"Error type: {type(error)}")
+        print(f"Error message: {error}")
+    finally:
+        return rbt
+```
+
+
 The skill I have shown with this enhancement is my ability to select and apply advanced algorithms and data structures to a problem when necessary. The thought process for choosing an RBT over another self-balancing BST shows that I can critically think about the best solution for the task at hand and my coding of the RBT shows that I am able to implement that solution.
 
 ### Did you meet the course outcomes you planned to meet with this enhancement in Module One? Do you have any updates to your outcome-coverage plans?
