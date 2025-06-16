@@ -8,7 +8,211 @@
 [References](#references)
 
 ## Professional Self-Assessment
-Coming soon
+I have always had an interest in computers and programming, though didn’t seriously explore these areas until starting this degree at SNHU. Prior to this, I had dabbled a bit with basic HTML and CSS and taught myself to use Excel to a highly proficient level, thinking that this would satisfy my curiosity for computers and programming. While the latter is not overly related to the field of computer science, I would argue that there are minor elements of it which are. Instead of sating my curiosity, this experience only piqued my interest and caused a desire to learn more which this computer science program has SNHU has been able to provide. I have thoroughly enjoyed each and every course of this degree and have taken it as an opportunity to learn about the various aspects of computer science while growing my skills in them. I consider myself to be a lifelong learner and SNHU has given me the knowledge necessary to enter into the field of computer science while also providing me a very solid foundation to build upon over my career. Through this degree I have gained knowledge and developed my strengths in a number of areas.
+### Data Structures and Algorithms
+Appropriately using data structures and algorithms is essential to creating a well-functioning product. Using the incorrect data structure or creating a less-than-optimal algorithm can severely hamper the end-user’s experience. CS-300 (Data Structures and Algorithms) gave me the knowledge necessary to apply the most commonly used data structures. Based on this, I have the ability to create classes and objects that adhere to the needs of and work well with a data structure. Enhancements one and two for this portfolio are good examples of this in which I have created a Bid class that works well with two different types of binary search trees.
+
+Another example comes early in this degree from IT-145 (Foundations in App Development). One of the assignments in this course was to build an intake system for rescue animals. As the total number of animals to store is unknown at runtime though likely relatively small, an ArrayList is a good choice:
+```java
+    private static ArrayList<Dog> dogList = new ArrayList<Dog>();
+```
+This was easy to use to store prepopulated data and eventually to search to data on intake to prevent duplicate entries:
+```java
+    // Adds dogs to a list for testing
+    public static void initializeDogList() {
+        Dog dog1 = new Dog("Spot", "German Shepherd", "male", 1, 25.6, "05-12-2019", "United States", "intake", false, "United States");
+        Dog dog2 = new Dog("Rex", "Great Dane", "male", 3, 35.2, "02-03-2020", "United States", "Phase I", false, "United States");
+        Dog dog3 = new Dog("Bella", "Chihuahua", "female", 4, 25.6, "12-12-2019", "Canada", "in service", true, "Canada");
+        Dog dog4 = new Dog("Lady", "Basset", "female", 6, 55.6, "01-02-2018", "United States", "in service", false, "United States");
+        Dog dog5 = new Dog("Hank", "Yellow Lab", "male", 4, 70.2, "10-22-2019", "Canada", "in service", false, "Canada");
+
+        dogList.add(dog1);
+        dogList.add(dog2);
+        dogList.add(dog3);
+        dogList.add(dog4);
+        dogList.add(dog5);
+    }
+```
+
+```java
+    public static void intakeNewDog(Scanner scanner) {
+        String name = getUserString(scanner, "What is the dog's name?");
+        // Check for dog already in system
+        for(Dog dog: dogList) {
+            if(dog.getName().equalsIgnoreCase(name)) {
+                System.out.println("\nThis dog is already in our system\n");
+                return; //returns to menu
+            }
+        }
+```
+
+### Software Engineering and Databases
+Software engineering and database use are also essential to a well-functioning program. Without using either appropriately, the program could lose data or malfunction. My concentration for this degree is Software Engineering so many of my courses incorporated this. A great example of this comes from CS-465 (Full Stack Development) in which I built MEAN stack website. A strength of this project was the separation and encapsulation of components into their own files. This allowed for easier development as each file was focused and simple to create and debug and makes the whole project easier to understand. This project created a full functioning end-user facing website with an admin focused backend for easing the management of data displayed on the front end. Both interact with a MongoDB through the use of a custom-built API.
+
+In addition to the use of a MongoDB for this project, I have grown my abilities to use databases through DAD-220 (Introduction to Structured Database Environments) and CS-340 (Client-Server Development) in which I learned to use relational and document-based databases respectively. An example of my ability to use and interact with databases comes from CS-340 in which I built a CRUD API to handle the management of documents within a MongoDB:
+```python
+    # Create new document and add to database
+    # data: new document to add to database. Needs to be a Python dictionary
+    # returns: boolean; true if successful, false if failure
+    def create(self, data: dict) -> bool:
+        try:
+            if data is not None:
+                insertSuccess = self.database.animals.insert_one(data)
+                return insertSuccess.acknowledged
+            else:
+                raise Exception('Nothing to save, because data parameter is empty')
+        except Exception as e:
+            print(repr(e))
+            return False
+    
+    
+    # Searches for and returns list of documents from database
+    # data: document to search for in database. Needs to be a Python dictionary
+    # returns: list of documents found
+    def read(self, data: dict) -> list:
+        try:
+            if data is not None:
+                return list(self.database.animals.find(data))
+            else:
+                raise Exception('Nothing to search for, because data parameter is empty')
+        except Exception as e:
+            print(repr(e))
+            return list()
+        
+    
+    # Search for and update document(s) in the database
+    # searchData: document to search for in database. Needs to be a Python dictionary
+    # updateData: key/value pairs to update in found documents. Needs to be a Python dictionary
+    # returns: the number of documents updated
+    def update(self, searchData: dict, updateData: dict) -> int:
+        try:
+            if searchData is not None or updateData is not None:
+                return self.database.animals.update_many(searchData, updateData).modified_count
+            else:
+                raise Exception('Nothing to search for, because searchData or updataData parameter is empty')
+        except Exception as e:
+            print(repr(e))
+            return 0
+        
+        
+    # Deletes document(s) in the database
+    # data: document to search for in database. Needs to be a Python dictionary
+    # returns: the number of documents deleted
+    def delete(self, data: dict) -> int:
+        try:
+            if data is not None:
+                return self.database.animals.delete_many(data).deleted_count
+            else:
+                raise Exception('Nothing to search for, because data parameter is empty')
+        except Exception as e:
+            print(repr(e))
+            return 0
+```
+
+### Security
+Similar to the above two sections, software security is paramount to software development as it prevents both unintentional software crashes and intentional breaches. My skills in this area come from CS-305 (Software Security) and CS-405 (Secure Coding). In the former, I learned to use dependency checking tools to check for known security vulnerabilities and cryptography techniques to allow for transfer of sensitive information:
+```java
+    @RestController
+    class ServerController{
+        
+        /**
+         * Function to convert byte array to hexadecimal.
+         * <p>Found at: https://stackoverflow.com/questions/9655181/how-to-convert-a-byte-array-to-a-hex-string-in-java
+         * @param bytes  The byte array to convert to hexadecimal
+         * @return  String containing the converted byte array
+         */
+        public static String bytesToHex(byte[] bytes) {
+            final char[] HEX_ARRAY = "0123456789ABCDEF".toCharArray();
+            char[] hexChars = new char[bytes.length * 2];
+            for (int j = 0; j < bytes.length; j++) {
+                int v = bytes[j] & 0xFF;
+                hexChars[j * 2] = HEX_ARRAY[v >>> 4];
+                hexChars[j * 2 + 1] = HEX_ARRAY[v & 0x0F];
+            }
+            return new String(hexChars);
+        }
+        
+        @RequestMapping("/hash")
+        public String myHash() throws NoSuchAlgorithmException{
+            String data = "Quintin B. Rozelle's unique data string";
+            
+            //New message digest that creates hash
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hash = md.digest(data.getBytes());
+            
+            //Convert the hash to hexadecimal
+            String hexHash = bytesToHex(hash);
+        
+            return "<p>data: "+data+"<p>Name of Cipher Algorithm Used: SHA-256<p>CheckSum Value: "+hexHash;
+        }
+    }
+```
+
+In the latter class, I gained the ability to incorporate secure coding practices into my code to prevent security issues. Examples of this are the prevention of buffer overflow and SQL injection. In the code below, buffer overflow is prevented by using the getline function to read into an array no more than the size of that array:
+```c++
+    //char user_input[20];
+    const std::string account_number = "CharlieBrown42";
+    char user_input[20];
+    std::cout << "Enter a value: ";
+
+    // Added call to getline which terminates the character extraction once a certain number of characters are reached.
+    // The second argument calculates the total number of elements assigned to the array. This prevents issues with
+    // extracting the wrong number of characters from cin if the code is changed to define user_input with a different
+    // number of elements in the array
+    std::cin.getline(user_input, sizeof(user_input)/sizeof(*user_input));
+
+    std::cout << "You entered: " << user_input << std::endl;
+    std::cout << "Account Number = " << account_number << std::endl;
+```
+ 
+SQL injection is prevented in the following code example by using a regex to search user input for SQL injection attempts:
+```c++
+    bool run_query(sqlite3* db, const std::string& sql, std::vector< user_record >& records)
+    {
+    // clear any prior results
+    records.clear();
+
+    // Uses a regular expression to search for the presence of " or *** = ***" where *** is any valid SQL value and "or" is case insensitive
+    std::regex sqlInjectionSearch(" [Oo][Rr] .*=.*");
+    if (std::regex_search(sql, sqlInjectionSearch))
+    {
+        // SQL injection attempt found. Print notification to console and fail search
+        std::cout << "Attempted SQL injection identified. Aborting search" << std::endl;
+        return false;
+    }
+
+    char* error_message;
+    if(sqlite3_exec(db, sql.c_str(), callback, &records, &error_message) != SQLITE_OK)
+    {
+        std::cout << "Data failed to be queried from USERS table. ERROR = " << error_message << std::endl;
+        sqlite3_free(error_message);
+        return false;
+    }
+
+    return true;
+    }
+```
+ 
+### Collaborating in a team environment
+In addition to the hard skills listed above, a successful developer needs to be proficient in some of the softer skills as well. Since most developers do not work alone, being able to work well on a team is vital. CS-250 (Software Development Lifecycle) gave me the skills to work with teams that use the Agile framework. In this course, I simulated working on a team like this through written assignments and a group project/discussion. I also created an Agile team charter that could be used in a theoretical team:
+![Agile Team Charter](/_includes/cs-250_agile_charter.png "Agile Team Charter")
+ 
+### Communicating with stakeholders
+In addition to collaborating with a team, a developer must also communicate and collaborate with stakeholders. CS-250 and CS-319 (UI/UX Design and Development) provided me with the opportunity to grow these skills. As an example of this, in CS-250, I created multiple User Stories for a project to put myself in the end-user’s shoes to help ensure I was creating something they needed instead of something I thought they needed:
+![User Story](/_includes/cs-250_user_story.png "User Story")
+ 
+As another example, in CS-319 I conducted several interviews with potential user’s for a mobile app I was creating:
+![End User Interview](/_includes/cs-319_user_interview.png "End User Interview")
+ 
+Both cases showcase my ability to work with stakeholders to improve the product that I provide.
+### Artifact Summary
+The enhancements for this portfolio are all applied to the same artifact. This artifact comes from CS-300 (Data Structures and Algorithms). In it, I built a tool for reading auction information from a CSV file, adding that information to Bid objects, and storing those Bids in a binary search tree. This tool would then be able to display all information, display a specific record or delete a record from the BST.
+
+Enhancement One takes the original artifact and converts it from C++ to Python. This showcases my skills in software development through my ability to convert software from one language to another while understanding the nuances of both. In addition to this, I improved the documentation by adding well written comments where necessary and including docstrings for every class and function to help improve understanding for another developer who would be coming into my code blind. Security was improved though the use of data validation and exception handling. Lastly, software stability was ensured through the implementation of unit testing.
+
+Enhancement Two takes Enhancement One a step further by improving the data structure and algorithms used. Enhancement One retained the use of a standard binary search tree from the original artifact, but this enhancement converts that to the more advanced Red-Black Tree. This ensures that the algorithms run at a guaranteed time complexity of O(log n) instead of the potential for a time complexity of O(n) that standard binary search trees can have in certain situations (e.g., presorted input data, etc.). This enhancement retains and continues to build upon the documentation, security, and stability that Enhancement One introduced.
+
+Enhancement Three further improves upon the updates from Enhancement Two by implementing the use of a database to store the information between sessions. Since the imported data was stored in a data structure stored in memory, as soon as the program closes that information is lost. By using a database (in this case a SQLite database), that information is no longer volatile. To ease the use of and interaction with the database, a CRUD API was built which further helps to clean up the code and make it more readable. As with the other enhancements, the documentation, security, and stability improvements are maintained.
 
 ## Code Review
 {% include youtubePlayer.html %}
