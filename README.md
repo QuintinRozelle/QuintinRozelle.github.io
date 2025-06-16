@@ -195,14 +195,14 @@ SQL injection is prevented in the following code example by using a regex to sea
  
 ### Collaborating in a team environment
 In addition to the hard skills listed above, a successful developer needs to be proficient in some of the softer skills as well. Since most developers do not work alone, being able to work well on a team is vital. CS-250 (Software Development Lifecycle) gave me the skills to work with teams that use the Agile framework. In this course, I simulated working on a team like this through written assignments and a group project/discussion. I also created an Agile team charter that could be used in a theoretical team:
-![Agile Team Charter](/_includes/cs-250_agile_charter.png "Agile Team Charter")
+![Agile Team Charter](./_includes/cs-250_agile_charter.png "Agile Team Charter")
  
 ### Communicating with stakeholders
 In addition to collaborating with a team, a developer must also communicate and collaborate with stakeholders. CS-250 and CS-319 (UI/UX Design and Development) provided me with the opportunity to grow these skills. As an example of this, in CS-250, I created multiple User Stories for a project to put myself in the end-user’s shoes to help ensure I was creating something they needed instead of something I thought they needed:
-![User Story](/_includes/cs-250_user_story.png "User Story")
+![User Story](_includes/cs-250_user_story.png "User Story")
  
 As another example, in CS-319 I conducted several interviews with potential user’s for a mobile app I was creating:
-![End User Interview](/_includes/cs-319_user_interview.png "End User Interview")
+![End User Interview](../_includes/cs-319_user_interview.png "End User Interview")
  
 Both cases showcase my ability to work with stakeholders to improve the product that I provide.
 ### Artifact Summary
