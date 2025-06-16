@@ -195,7 +195,7 @@ SQL injection is prevented in the following code example by using a regex to sea
  
 ### Collaborating in a team environment
 In addition to the hard skills listed above, a successful developer needs to be proficient in some of the softer skills as well. Since most developers do not work alone, being able to work well on a team is vital. CS-250 (Software Development Lifecycle) gave me the skills to work with teams that use the Agile framework. In this course, I simulated working on a team like this through written assignments and a group project/discussion. I also created an Agile team charter that could be used in a theoretical team:
-<img src="/_includes/cs-250_agile_charter.png" alt="Agile Team Charter" title="Agile Team Charter" />
+<img src="_includes/cs-250_agile_charter.png" alt="Agile Team Charter" title="Agile Team Charter" />
 ![Agile Team Charter](./_includes/cs-250_agile_charter.png "Agile Team Charter")
  
 ### Communicating with stakeholders
