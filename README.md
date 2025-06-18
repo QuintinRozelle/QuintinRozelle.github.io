@@ -232,7 +232,8 @@ Through the completion of this self-assessment and the code enhancements, I have
 
 ## Enhancement One
 [Original code files found here](https://github.com/QuintinRozelle/QuintinRozelle.github.io/tree/f5b2115f8625b45f631b29f2f1e1f1702ae8e2cd/original_artifact)
-[Code files found here](https://github.com/QuintinRozelle/QuintinRozelle.github.io/tree/f5b2115f8625b45f631b29f2f1e1f1702ae8e2cd/enhancement_one)
+
+[Enhanced code files found here](https://github.com/QuintinRozelle/QuintinRozelle.github.io/tree/f5b2115f8625b45f631b29f2f1e1f1702ae8e2cd/enhancement_one)
 
 ### Briefly describe the artifact. What is it? When was it created?
 The artifact chosen for enhancement one is the binary search tree (BST) assignment from CS-300 Data Structures and Algorithms. This is a quick program that will load a CSV file into memory as a BST and perform basic insertion, search, deletion, and traversal operations on it. It was originally meant as an assignment to gain experience working with BST. I chose to use this one for enhancement one specifically for a few different reasons:
@@ -338,7 +339,8 @@ In addition to the stated learning goals above (i.e., more practice with Python 
 
 ## Enhancement Two
 [Original code files found here](https://github.com/QuintinRozelle/QuintinRozelle.github.io/tree/f5b2115f8625b45f631b29f2f1e1f1702ae8e2cd/original_artifact)
-[Code files found here](https://github.com/QuintinRozelle/QuintinRozelle.github.io/tree/f5b2115f8625b45f631b29f2f1e1f1702ae8e2cd/enhancement_two)
+
+[Enhanced code files found here](https://github.com/QuintinRozelle/QuintinRozelle.github.io/tree/f5b2115f8625b45f631b29f2f1e1f1702ae8e2cd/enhancement_two)
 
 ### Briefly describe the artifact. What is it? When was it created?
 The artifact chosen for this enhancement is the binary search tree (BST) assignment from CS-300 Data Structures and Algorithms. The original intent of this code was to showcase the use of a BST in storing, sorting, searching, displaying, and deleting data that was imported from a CSV file. It was one of a series of similar assignments that accomplished the same task but with different data structures so we could learn firsthand how they function and differ from one another.
@@ -449,7 +451,8 @@ The second major thing I learned is how much of an improvement an RBT is over a 
 
 ## Enhancement Three
 [Original code files found here](https://github.com/QuintinRozelle/QuintinRozelle.github.io/tree/f5b2115f8625b45f631b29f2f1e1f1702ae8e2cd/original_artifact)
-[Code files found here](https://github.com/QuintinRozelle/QuintinRozelle.github.io/tree/f5b2115f8625b45f631b29f2f1e1f1702ae8e2cd/enhancement_three)
+
+[Enhanced code files found here](https://github.com/QuintinRozelle/QuintinRozelle.github.io/tree/f5b2115f8625b45f631b29f2f1e1f1702ae8e2cd/enhancement_three)
 
 ### Briefly describe the artifact. What is it? When was it created?
 The artifact chosen for this enhancement is the binary search tree assignment from CS-300 Data Structures and Algorithms. This was one assignment in a series that provided hands on experience with a variety of data structures. Each assignment accomplished the same task (i.e., loading, sorting, displaying, searching, and deleting records from a CSV file into memory) but did so using different data structures each time. This particular artifact was meant to showcase the use and benefits of a binary search tree.
