@@ -227,11 +227,13 @@ Through the completion of this self-assessment and the code enhancements, I have
 5. Develop a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources.
     - I achieved this outcome through the use of data validation and exception handling throughout the enhancements. The data validation ensured that information given to the programs was reasonable and in the format intended to prevent crashes or unintended side effects (e.g., SQL injection, etc.). Additionally, the exception handling allowed the code to catch thrown errors and deal with them in a way that prevented the program from crashing.
 
-
 ## Code Review
 {% include youtubePlayer.html %}
 
 ## Enhancement One
+[Original code files found here](https://github.com/QuintinRozelle/QuintinRozelle.github.io/tree/f5b2115f8625b45f631b29f2f1e1f1702ae8e2cd/original_artifact)
+[Code files found here](https://github.com/QuintinRozelle/QuintinRozelle.github.io/tree/f5b2115f8625b45f631b29f2f1e1f1702ae8e2cd/enhancement_one)
+
 ### Briefly describe the artifact. What is it? When was it created?
 The artifact chosen for enhancement one is the binary search tree (BST) assignment from CS-300 Data Structures and Algorithms. This is a quick program that will load a CSV file into memory as a BST and perform basic insertion, search, deletion, and traversal operations on it. It was originally meant as an assignment to gain experience working with BST. I chose to use this one for enhancement one specifically for a few different reasons:
 1.	I wanted to convert something from one language to another for this artifact. Upon thinking about this, I decided to convert something into Python because it has been a while since I used Python to any significant degree and this enhancement provided me with the opportunity to brush up on my Python skills. Additionally, if I do go into something involving big data, I will need to be proficient in Python.
@@ -335,6 +337,9 @@ I planned to target outcomes 1, 4, and 5 with this enhancement and have met all 
 In addition to the stated learning goals above (i.e., more practice with Python and DSA), I learned a few additional things. First, I chose to better use unit testing while creating this artifact which historically is something I haven’t done much. While it did take time to learn unit testing in Python and develop those unit tests prior to coding the enhancement, it did produce better results and helped to guide my development. Next, I learned that Python has a limit to the number of recursive functions that can be added to the stack which appears to be around 1000. I originally made my BST functions use recursion, but found that when loading a 12,000-line, presorted CSV file, the code would fail due to this limit. Converting the functions to iterative versions solved this issue. Lastly, I learned that the format of a source file can have drastic changes to the functioning code. Once I fixed the issue with recursion, I decided to test my code on the same CSV file but when it was randomly sorted. The presorted file took my program about 13.5 seconds to load while the randomly sorted file took about 0.1 seconds to load. I believe this is because the presorted build an incredibly tall BST (all nodes essentially having only right children) while the randomly sorted file created a more well-balanced BST. This cut down on the iterations during the insertions which created a faster tree.
 
 ## Enhancement Two
+[Original code files found here](https://github.com/QuintinRozelle/QuintinRozelle.github.io/tree/f5b2115f8625b45f631b29f2f1e1f1702ae8e2cd/original_artifact)
+[Code files found here](https://github.com/QuintinRozelle/QuintinRozelle.github.io/tree/f5b2115f8625b45f631b29f2f1e1f1702ae8e2cd/enhancement_two)
+
 ### Briefly describe the artifact. What is it? When was it created?
 The artifact chosen for this enhancement is the binary search tree (BST) assignment from CS-300 Data Structures and Algorithms. The original intent of this code was to showcase the use of a BST in storing, sorting, searching, displaying, and deleting data that was imported from a CSV file. It was one of a series of similar assignments that accomplished the same task but with different data structures so we could learn firsthand how they function and differ from one another.
 
@@ -443,6 +448,9 @@ I learned two major things about advanced data structures and algorithms with th
 The second major thing I learned is how much of an improvement an RBT is over a standard BST. While testing my code, I used two separate data sets for loading information into the data structures. Both had identical information, but one was randomly sorted while the other was sorted by key. With a BST, the randomly sorted data was inserted into the tree quickly (approximately 0.9 seconds) while the sorted data set took significantly longer (about 13.5 seconds). Using the same data sets on an RBT resulted in a load time of about 0.9 seconds for either sorting method. Enforcing balancing to a tree has a significant improvement to its functionality.
 
 ## Enhancement Three
+[Original code files found here](https://github.com/QuintinRozelle/QuintinRozelle.github.io/tree/f5b2115f8625b45f631b29f2f1e1f1702ae8e2cd/original_artifact)
+[Code files found here](https://github.com/QuintinRozelle/QuintinRozelle.github.io/tree/f5b2115f8625b45f631b29f2f1e1f1702ae8e2cd/enhancement_three)
+
 ### Briefly describe the artifact. What is it? When was it created?
 The artifact chosen for this enhancement is the binary search tree assignment from CS-300 Data Structures and Algorithms. This was one assignment in a series that provided hands on experience with a variety of data structures. Each assignment accomplished the same task (i.e., loading, sorting, displaying, searching, and deleting records from a CSV file into memory) but did so using different data structures each time. This particular artifact was meant to showcase the use and benefits of a binary search tree.
 ### Justify the inclusion of the artifact in your ePortfolio. Why did you select this item? What specific components of the artifact showcase your skills and abilities in databases? How was the artifact improved?
