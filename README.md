@@ -1,4 +1,4 @@
-# Quintin B. Rozelle
+# Quintin B. Rozelle's Portfolio
 ## Contents
 [Professional Self-Assessment](#professional-self-assessment)<br>
 [Code Review](#code-review)<br>
